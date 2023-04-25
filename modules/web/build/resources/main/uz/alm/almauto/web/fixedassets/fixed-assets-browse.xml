@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="uz.alm.almauto.web.fixedassets.FixedAssetsBrowse"
+        focusComponent="fixedAssetsesTable"
+        lookupComponent="fixedAssetsesTable"
+        messagesPack="uz.alm.almauto.web.fixedassets">
+    <dsContext>
+        <groupDatasource id="fixedAssetsesDs"
+                         class="uz.alm.almauto.entity.FixedAssets"
+                         view="fixedAssets-view">
+            <query>
+                <![CDATA[select e from almauto$FixedAssets e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="fixedAssetsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="fixedAssetsesTable"
+                datasource="fixedAssetsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="fixedAssetsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="description"/>
+            </columns>
+            <rows datasource="fixedAssetsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="fixedAssetsesTable.create"/>
+                <button id="editBtn"
+                        action="fixedAssetsesTable.edit"/>
+                <button id="removeBtn"
+                        action="fixedAssetsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

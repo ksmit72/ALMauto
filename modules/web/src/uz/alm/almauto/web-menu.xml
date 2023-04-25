@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-almauto"
+          insertBefore="administration">
+    </menu>
+    <menu id="sprs"
+          insertBefore="administration">
+        <item screen="almauto$Post.browse"/>
+        <item screen="almauto$ProductType.browse"/>
+        <item screen="almauto$Unit.browse"/>
+        <item screen="almauto$PackageType.browse"/>
+    </menu>
+    <menu id="sprsCompany"
+          insertBefore="administration">
+        <item screen="almauto$Company.browse"/>
+        <item screen="almauto$Branch.browse"/>
+        <item screen="almauto$Employee.browse"/>
+        <item screen="almauto$FixedAssets.browse"/>
+        <item screen="almauto$Warehouse.browse"/>
+        <item screen="almauto$Kontragent.browse"/>
+    </menu>
+    <menu id="prices"
+          insertBefore="administration">
+        <item screen="almauto$Products.browse"/>
+        <item screen="almauto$Price.browse"/>
+    </menu>
+    <menu id="prinout">
+        <item screen="almauto$ProductIn.browse"/>
+    </menu>
+</menu-config>

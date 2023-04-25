@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="uz.alm.almauto.web.kontragent.KontragentBrowse"
+        focusComponent="kontragentsTable"
+        lookupComponent="kontragentsTable"
+        messagesPack="uz.alm.almauto.web.kontragent">
+    <dsContext>
+        <groupDatasource id="kontragentsDs"
+                         class="uz.alm.almauto.entity.sprs.Kontragent"
+                         view="kontragent-view">
+            <query>
+                <![CDATA[select e from almauto$Kontragent e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="kontragentsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="kontragentsTable"
+                datasource="kontragentsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="kontragentsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="inn"/>
+                <column id="lastName"/>
+                <column id="firstName"/>
+                <column id="middleName"/>
+                <column id="post"/>
+                <column id="address"/>
+                <column id="rs"/>
+                <column id="bank"/>
+                <column id="mfo"/>
+                <column id="telFax"/>
+            </columns>
+            <rows datasource="kontragentsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="kontragentsTable.create"/>
+                <button id="editBtn"
+                        action="kontragentsTable.edit"/>
+                <button id="removeBtn"
+                        action="kontragentsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,6 @@
+@import "deffont-defaults";
+@import "deffont";
+
+.deffont {
+  @include deffont;
+}

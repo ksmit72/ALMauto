@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CubaProjectState">
+    <option name="hasState" value="true" />
+    <option name="cubaModelState">
+      <CubaModelState>
+        <option name="repositories">
+          <list>
+            <RepositoryModelState>
+              <option name="url" value="http://localhost:8081/nexus/content/repositories/alm" />
+              <option name="user" value="admin" />
+              <option name="pass" value="o7WClg4q/Jj9rByhW9Z7Xw==" />
+              <option name="stateVersion" value="2" />
+            </RepositoryModelState>
+            <RepositoryModelState>
+              <option name="url" value="https://repository.aspose.com/repo/" />
+              <option name="user" value="" />
+              <option name="pass" value="/awcoVvWe18=" />
+              <option name="stateVersion" value="2" />
+            </RepositoryModelState>
+            <RepositoryModelState>
+              <option name="url" value="https://repo.cuba-platform.com/content/groups/work" />
+              <option name="user" value="cuba" />
+              <option name="pass" value="3r6+CXYTcUs=" />
+              <option name="stateVersion" value="2" />
+            </RepositoryModelState>
+            <RepositoryModelState>
+              <option name="url" value="https://jcenter.bintray.com/" />
+              <option name="user" value="" />
+              <option name="pass" value="/awcoVvWe18=" />
+              <option name="stateVersion" value="2" />
+            </RepositoryModelState>
+          </list>
+        </option>
+        <option name="appComponents">
+          <list>
+            <DependencyModelState>
+              <option name="group" value="com.haulmont.cuba" />
+              <option name="name" value="cuba-global" />
+              <option name="version" value="6.10.9" />
+            </DependencyModelState>
+            <DependencyModelState>
+              <option name="group" value="org.apache.tomcat" />
+              <option name="name" value="tomcat-util-scan" />
+              <option name="version" value="8.5.33" />
+            </DependencyModelState>
+          </list>
+        </option>
+        <option name="mavenLocal" value="true" />
+        <option name="artifactGroup" value="uz.alm.almauto" />
+        <option name="artifactVersion" value="0.1" />
+        <option name="artifactSnapshot" value="true" />
+        <option name="tomcatDir" value="C:\_apps\ALMauto/deploy/tomcat" />
+        <option name="gradleVersion" value="4.3.1" />
+        <option name="oracleSystemCredentials">
+          <map>
+            <entry key="_MAIN_">
+              <value>
+                <OracleSystemCredentialsModelState>
+                  <option name="systemUser" value="system" />
+                  <option name="systemPassword" value="manager" />
+                </OracleSystemCredentialsModelState>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="gradlePluginJarPath" value="C:\Users\akbar\.gradle\caches\modules-2\files-2.1\com.haulmont.gradle\cuba-plugin\6.10.9\fed9801dcf24c5d0b25d512c4d6002cbbef3761c\cuba-plugin-6.10.9.jar" />
+        <option name="projectPath" value="C:\_apps\ALMauto" />
+      </CubaModelState>
+    </option>
+    <option name="dbArtifacts">
+      <map>
+        <entry key="com.haulmont.cuba" value="C:\Users\akbar\.gradle\caches\modules-2\files-2.1\com.haulmont.cuba\cuba-core\6.10.9\89974177ce94b73e68a76b736dd5efb8aa379e7a\cuba-core-6.10.9-db.zip" />
+      </map>
+    </option>
+    <option name="gradleFilesCRC" value="5441495221" />
+  </component>
+</project>

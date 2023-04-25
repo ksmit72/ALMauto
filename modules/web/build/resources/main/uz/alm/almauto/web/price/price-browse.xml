@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="uz.alm.almauto.web.price.PriceBrowse"
+        focusComponent="pricesTable"
+        lookupComponent="pricesTable"
+        messagesPack="uz.alm.almauto.web.price">
+    <dsContext>
+        <groupDatasource id="pricesDs"
+                         class="uz.alm.almauto.entity.prices.Price"
+                         view="price-view">
+            <query>
+                <![CDATA[select e from almauto$Price e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="pricesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="pricesTable"
+                datasource="pricesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="pricesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="vDate"/>
+                <column id="comment"/>
+            </columns>
+            <rows datasource="pricesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="pricesTable.create"/>
+                <button id="editBtn"
+                        action="pricesTable.edit"/>
+                <button id="removeBtn"
+                        action="pricesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

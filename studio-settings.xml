@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<studio>
+    <functionalitySettings>
+        <functionality id="joinedInheritanceDeleteCascade"
+                       state="ENABLE"/>
+        <functionality id="newFkConstraintNaming"
+                       state="ENABLE"/>
+        <functionality id="oneToOneIndex"
+                       state="ENABLE"/>
+    </functionalitySettings>
+    <dbScripts>
+        <excludes>
+            <postgres>
+                <item name="190423-2-updateFixedAssets02_DropScript.sql">
+                    <![CDATA[alter table ALMAUTO_FIXED_ASSETS drop column IMAGE_FILE_ID__U78476 cascade ;]]>
+                </item>
+                <item name="190423-0-dropProductsPackCountLink_DropScript.sql">
+                    <![CDATA[drop table if exists ALMAUTO_PRODUCTS_PACK_COUNT_LINK__U15292 cascade ;]]>
+                </item>
+            </postgres>
+        </excludes>
+    </dbScripts>
+</studio>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="uz.alm.almauto.web.products.ProductsBrowse"
+        focusComponent="productsesTable"
+        lookupComponent="productsesTable"
+        messagesPack="uz.alm.almauto.web.products">
+    <dsContext>
+        <groupDatasource id="productsesDs"
+                         class="uz.alm.almauto.entity.Products"
+                         view="products-view">
+            <query>
+                <![CDATA[select e from almauto$Products e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="productsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="productsesTable"
+                datasource="productsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="productsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="productType"/>
+                <column id="name"/>
+                <column id="vendorCode"/>
+                <column id="barCode"/>
+                <column id="unit"/>
+            </columns>
+            <rows datasource="productsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="productsesTable.create"/>
+                <button id="editBtn"
+                        action="productsesTable.edit"/>
+                <button id="removeBtn"
+                        action="productsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

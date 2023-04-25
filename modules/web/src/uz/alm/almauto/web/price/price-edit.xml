@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="uz.alm.almauto.web.price.PriceEdit"
+        datasource="priceDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.price">
+    <dsContext>
+        <datasource id="priceDs"
+                    class="uz.alm.almauto.entity.prices.Price"
+                    view="price-view">
+            <collectionDatasource id="priceListDs"
+                                  property="priceList"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="priceDs">
+            <column width="250px">
+                <field property="vDate"/>
+                <field property="comment"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="priceListBox"
+                  caption="msg://uz.alm.almauto.entity.prices/Price.priceList">
+            <table id="priceListTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="product"/>
+                    <column id="prices"/>
+                    <column id="price"/>
+                </columns>
+                <rows datasource="priceListDs"/>
+                <buttonsPanel>
+                    <button action="priceListTable.create"/>
+                    <button action="priceListTable.edit"/>
+                    <button action="priceListTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

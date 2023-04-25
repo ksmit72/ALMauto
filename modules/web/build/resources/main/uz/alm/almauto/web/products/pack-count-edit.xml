@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://pceditor"
+        class="uz.alm.almauto.web.products.PackCountEdit"
+        datasource="packCountDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.products">
+    <dsContext>
+        <datasource id="packCountDs"
+                    class="uz.alm.almauto.entity.PackCount"
+                    view="packCount-view"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="packCountDs">
+            <column width="250px">
+                <field property="packageType"/>
+                <field property="quantity"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="ALMauto"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>uz.alm.almauto.entity.Unit</class>
+        <class>uz.alm.almauto.entity.sprs.Post</class>
+        <class>uz.alm.almauto.entity.sprs.Branch</class>
+        <class>uz.alm.almauto.entity.sprs.Employee</class>
+        <class>uz.alm.almauto.entity.sprs.Company</class>
+        <class>uz.alm.almauto.entity.sprs.Warehouse</class>
+        <class>uz.alm.almauto.entity.Products</class>
+        <class>uz.alm.almauto.entity.ProductType</class>
+        <class>uz.alm.almauto.entity.FixedAssets</class>
+        <class>uz.alm.almauto.entity.FixedAssetsFotos</class>
+        <class>uz.alm.almauto.entity.PackageType</class>
+        <class>uz.alm.almauto.entity.PackCount</class>
+        <class>uz.alm.almauto.entity.prices.Price</class>
+        <class>uz.alm.almauto.entity.prices.PriceList</class>
+        <class>uz.alm.almauto.entity.sprs.Kontragent</class>
+        <class>uz.alm.almauto.entity.prod.ProductIn</class>
+        <class>uz.alm.almauto.entity.prod.ProductInList</class>
+    </persistence-unit>
+</persistence>

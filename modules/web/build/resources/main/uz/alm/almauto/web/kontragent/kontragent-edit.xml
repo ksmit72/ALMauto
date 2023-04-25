@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="uz.alm.almauto.web.kontragent.KontragentEdit"
+        datasource="kontragentDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.kontragent">
+    <dsContext>
+        <datasource id="kontragentDs"
+                    class="uz.alm.almauto.entity.sprs.Kontragent"
+                    view="kontragent-view"/>
+        <collectionDatasource id="postsDs"
+                              class="uz.alm.almauto.entity.sprs.Post"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from almauto$Post e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="kontragentDs">
+                <column width="250px">
+                    <field property="name"/>
+                    <field property="inn"/>
+                    <field property="lastName"/>
+                    <field property="firstName"/>
+                    <field property="middleName"/>
+                    <field optionsDatasource="postsDs"
+                           property="post"/>
+                    <field property="address"/>
+                    <field property="rs"/>
+                    <field property="bank"/>
+                    <field property="mfo"/>
+                    <field property="telFax"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

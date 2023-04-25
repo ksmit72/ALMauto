@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="uz.alm.almauto.web.fixedassets.FixedAssetsEdit"
+        datasource="fixedAssetsDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.fixedassets">
+    <dsContext>
+        <datasource id="fixedAssetsDs"
+                    class="uz.alm.almauto.entity.FixedAssets"
+                    view="fixedAssets-view">
+            <collectionDatasource id="fixedAssetsFotosDs"
+                                  property="fixedAssetsFotos"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="fixedAssetsDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="description"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="fixedAssetsFotosBox"
+                  caption="msg://uz.alm.almauto.entity/FixedAssets.fixedAssetsFotos">
+            <table id="fixedAssetsFotosTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="data"/>
+                    <column id="comment"/>
+                    <column id="imageFile"/>
+                </columns>
+                <rows datasource="fixedAssetsFotosDs"/>
+                <buttonsPanel>
+                    <button action="fixedAssetsFotosTable.create"/>
+                    <button action="fixedAssetsFotosTable.edit"/>
+                    <button action="fixedAssetsFotosTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

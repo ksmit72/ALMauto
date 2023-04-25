@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="uz.alm.almauto.web.productin.ProductInEdit"
+        datasource="productInDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.productin">
+    <dsContext>
+        <datasource id="productInDs"
+                    class="uz.alm.almauto.entity.prod.ProductIn"
+                    view="productIn-view">
+            <collectionDatasource id="productInListDs"
+                                  property="productInList"/>
+        </datasource>
+        <collectionDatasource id="warehousesDs"
+                              class="uz.alm.almauto.entity.sprs.Warehouse"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from almauto$Warehouse e]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="pricesDs"
+                              class="uz.alm.almauto.entity.prices.Price"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from almauto$Price e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="productInDs">
+            <column width="250px">
+                <field property="vDate"/>
+                <field optionsDatasource="warehousesDs"
+                       property="warehouse"/>
+                <field optionsDatasource="pricesDs"
+                       property="price"/>
+                <field property="amount"/>
+                <field property="comment"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="productInListBox"
+                  caption="msg://uz.alm.almauto.entity.prod/ProductIn.productInList">
+            <table id="productInListTable"
+                   aggregatable="true"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="product"/>
+                    <column id="inUpak"/>
+                    <column id="packageType"/>
+                    <column id="kolUpak"/>
+                    <column id="umKol"/>
+                    <column id="price"/>
+                    <column id="amount"/>
+                </columns>
+                <rows datasource="productInListDs"/>
+                <buttonsPanel>
+                    <button action="productInListTable.create"/>
+                    <button action="productInListTable.edit"/>
+                    <button action="productInListTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

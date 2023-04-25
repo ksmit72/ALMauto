@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="uz.alm.almauto.entity.sprs.Employee"
+          extends="_local"
+          name="employee-view">
+        <property name="post"
+                  view="_minimal"/>
+        <property name="branch"
+                  view="_minimal"/>
+    </view>
+    <view class="uz.alm.almauto.entity.Products"
+          extends="_local"
+          name="products-view">
+        <property name="productType"
+                  view="_minimal"/>
+        <property name="unit"
+                  view="_minimal"/>
+        <property name="packCount"
+                  view="_local">
+            <property name="packageType"
+                      view="_minimal"/>
+        </property>
+    </view>
+    <view class="uz.alm.almauto.entity.FixedAssets"
+          extends="_local"
+          name="fixedAssets-view">
+        <property name="fixedAssetsFotos"
+                  view="_minimal">
+            <property name="imageFile"
+                      view="_minimal"/>
+        </property>
+    </view>
+    <view class="uz.alm.almauto.entity.FixedAssetsFotos"
+          extends="_local"
+          name="fixedAssetsFotos-view">
+        <property name="imageFile"
+                  view="_minimal"/>
+    </view>
+    <view class="uz.alm.almauto.entity.PackCount"
+          extends="_local"
+          name="packCount-view">
+        <property name="packageType"
+                  view="_minimal"/>
+    </view>
+    <view class="uz.alm.almauto.entity.prices.PriceList"
+          extends="_local"
+          name="priceList-view">
+        <property name="product"
+                  view="_minimal">
+            <property name="packCount"
+                      view="_minimal"/>
+        </property>
+    </view>
+    <view class="uz.alm.almauto.entity.prices.Price"
+          extends="_local"
+          name="price-view">
+        <property name="priceList"
+                  view="_minimal">
+            <property name="price"/>
+        </property>
+    </view>
+    <view class="uz.alm.almauto.entity.sprs.Kontragent"
+          extends="_local"
+          name="kontragent-view">
+        <property name="post"
+                  view="_minimal"/>
+    </view>
+    <view class="uz.alm.almauto.entity.prod.ProductInList"
+          extends="_local"
+          name="productInList-view">
+        <property name="product"
+                  view="_minimal"/>
+        <property name="packageType"
+                  view="_minimal"/>
+    </view>
+    <view class="uz.alm.almauto.entity.prod.ProductIn"
+          extends="_local"
+          name="productIn-view">
+        <property name="productInList"
+                  view="_minimal"/>
+        <property name="warehouse"
+                  view="_minimal"/>
+        <property name="price"
+                  view="_minimal"/>
+    </view>
+    <view class="uz.alm.almauto.entity.sprs.Warehouse"
+          extends="_local"
+          name="warehouse-view">
+        <property name="company"
+                  view="_minimal"/>
+        <property name="employee"
+                  view="_minimal"/>
+    </view>
+</views>

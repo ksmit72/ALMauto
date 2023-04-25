@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://prleditor"
+        class="uz.alm.almauto.web.price.PriceListEdit"
+        datasource="priceListDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.price">
+    <dsContext>
+        <datasource id="priceListDs"
+                    class="uz.alm.almauto.entity.prices.PriceList"
+                    view="priceList-view"/>
+        <collectionDatasource id="productsDs"
+                              class="uz.alm.almauto.entity.Products"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from almauto$Products e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="priceListDs">
+            <column width="250px">
+                <field optionsDatasource="productsDs"
+                       property="product"/>
+                <field property="price"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

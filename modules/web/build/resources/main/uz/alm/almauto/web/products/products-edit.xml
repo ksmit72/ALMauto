@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="uz.alm.almauto.web.products.ProductsEdit"
+        datasource="productsDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.products">
+    <dsContext>
+        <datasource id="productsDs"
+                    class="uz.alm.almauto.entity.Products"
+                    view="products-view">
+            <collectionDatasource id="packCountDs"
+                                  property="packCount"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="productsDs">
+            <column width="250px">
+                <field property="productType"/>
+                <field property="name"/>
+                <field property="vendorCode"/>
+                <field property="barCode"/>
+                <field property="unit"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="packCountBox"
+                  caption="msg://uz.alm.almauto.entity/Products.packCount">
+            <table id="packCountTable"
+                   height="150px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="quantity"/>
+                    <column id="packageType"/>
+                </columns>
+                <rows datasource="packCountDs"/>
+                <buttonsPanel>
+                    <button action="packCountTable.create"/>
+                    <button action="packCountTable.edit"/>
+                    <button action="packCountTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

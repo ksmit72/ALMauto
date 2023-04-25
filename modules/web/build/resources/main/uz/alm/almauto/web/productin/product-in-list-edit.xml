@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://preditor"
+        class="uz.alm.almauto.web.productin.ProductInListEdit"
+        datasource="productInListDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.productin">
+    <dsContext>
+        <datasource id="productInListDs"
+                    class="uz.alm.almauto.entity.prod.ProductInList"
+                    view="productInList-view"/>
+        <collectionDatasource id="productsDs"
+                              class="uz.alm.almauto.entity.Products"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from almauto$Products e]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="packageTypesDs"
+                              class="uz.alm.almauto.entity.PackageType"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from almauto$PackageType e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="600"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="productInListDs">
+            <column width="250px">
+                <field optionsDatasource="productsDs"
+                       property="product"/>
+                <field property="kolUpak"/>
+                <field optionsDatasource="packageTypesDs"
+                       property="packageType"/>
+                <field property="inUpak"/>
+                <field property="umKol"/>
+                <field property="price"/>
+                <field property="amount"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

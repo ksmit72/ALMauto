@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="uz.alm.almauto.web.productin.ProductInBrowse"
+        focusComponent="productInsTable"
+        lookupComponent="productInsTable"
+        messagesPack="uz.alm.almauto.web.productin">
+    <dsContext>
+        <groupDatasource id="productInsDs"
+                         class="uz.alm.almauto.entity.prod.ProductIn"
+                         view="productIn-view">
+            <query>
+                <![CDATA[select e from almauto$ProductIn e
+where e.typeFlow=1]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="productInsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="productInsTable"
+                datasource="productInsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="productInsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="vDate"/>
+                <column id="warehouse"/>
+                <column id="typeFlow"/>
+                <column id="price"/>
+                <column id="amount"/>
+                <column id="comment"/>
+            </columns>
+            <rows datasource="productInsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="productInsTable.create"
+                        invoke="onCreateBtnClick"/>
+                <button id="editBtn"
+                        action="productInsTable.edit"/>
+                <button id="removeBtn"
+                        action="productInsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

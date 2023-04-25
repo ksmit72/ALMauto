@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="uz.alm.almauto.web.fixedassets.FixedAssetsFotosEdit"
+        datasource="fixedAssetsFotosDs"
+        focusComponent="fieldGroup"
+        messagesPack="uz.alm.almauto.web.fixedassets">
+    <dsContext>
+        <datasource id="fixedAssetsFotosDs"
+                    class="uz.alm.almauto.entity.FixedAssetsFotos"
+                    view="fixedAssetsFotos-view"/>
+        <collectionDatasource id="imageFilesDs"
+                              class="com.haulmont.cuba.core.entity.FileDescriptor"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from sys$FileDescriptor e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <scrollBox id="windowActions_scrollBox"
+                   height="100%"
+                   scrollBars="both"
+                   width="AUTO">
+            <fieldGroup id="fieldGroup"
+                        datasource="fixedAssetsFotosDs">
+                <column width="250px">
+                    <field optionsDatasource="imageFilesDs"
+                           property="imageFile"/>
+                    <field property="comment"/>
+                </column>
+            </fieldGroup>
+            <frame id="windowActions"
+                   height="50px"
+                   screen="editWindowActions"
+                   width="200px"/>
+            <image id="imageId"
+                   datasource="fixedAssetsFotosDs"
+                   property="imageFile"
+                   scaleMode="CONTAIN"/>
+        </scrollBox>
+    </layout>
+</window>

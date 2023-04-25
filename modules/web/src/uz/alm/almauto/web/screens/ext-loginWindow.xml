@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="uz.alm.almauto.web.screens.ExtAppLoginWindow"
+        extends="/com/haulmont/cuba/web/app/loginwindow/loginwindow.xml"
+        messagesPack="uz.alm.almauto.web.screens">
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <vbox id="loginWrapper">
+            <vbox id="loginMainBox">
+                <vbox id="loginForm">
+                    <button id="loginButton"
+                            caption="msg://submit"/>
+                </vbox>
+            </vbox>
+        </vbox>
+        <label id="poweredByLink"
+               value="msg://poweredBy"/>
+    </layout>
+</window>
